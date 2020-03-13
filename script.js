@@ -7,12 +7,20 @@ $("#today").text(today);
 
 var slots = $("#slots");
 var hours = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5,];
-var storage = JSON.parse(localStorage.getItem("times"));
 
 //Put time slots on page
 function timeSlots () {
     for(var i = 0; i < hours.length; i++){
-    $("#slots").append(hours[i]);
-    }
+        var colorTime = "";
+        if (time === hours[i]) {
+          colorTime = "present";
+        } else if (time < hours[i]) {
+          colorTime = "future";
+        } else if (time > hours[i]) {
+          colorTime = "past";
+        }
+        
+        $("#slots").append(hours);
+      }
 }
 
